@@ -14,7 +14,9 @@
     "check": "biome check .",
     "format": "biome format --write .",
     "lint": "biome lint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish"
   },
   "keywords": ["claude-code", "git-worktree", "zellij", "cli", "development"],
   "author": "yuucu",
