@@ -46,14 +46,14 @@ child.on('close', (code) => {
     // Check if worktrees were created
     setTimeout(() => {
       import('node:fs').then(fs => {
-        testBranches.forEach(branch => {
+        for (const branch of testBranches) {
           const worktreePath = `../ccgwz-${branch}`;
           if (fs.existsSync(worktreePath)) {
             console.log(`✅ Worktree created: ${worktreePath}`);
           } else {
             console.log(`❌ Worktree not found: ${worktreePath}`);
           }
-        });
+        }
       });
     }, 1000);
   } else {
