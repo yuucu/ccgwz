@@ -29,7 +29,6 @@ npm install -g ccgwz
 ```bash
 ccgwz                    # Interactive: create 1 pane
 ccgwz --panes 2          # Create 2 panes
-ccgwz --new-session      # Start fresh zellij session
 ```
 
 ## 🏗️ What happens?
