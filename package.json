@@ -1,0 +1,38 @@
+{
+  "name": "ccgwz",
+  "version": "0.1.0",
+  "description": "Claude Code Git Worktree Zellij - CLI tool for parallel development with git worktrees and Claude Code in zellij panes",
+  "main": "dist/index.js",
+  "bin": {
+    "ccgwz": "dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["claude-code", "git-worktree", "zellij", "cli", "development"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12",
+    "yaml": "^2.3.0",
+    "execa": "^8.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
