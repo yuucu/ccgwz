@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { spawn } from 'child_process';
+import { spawn } from 'node:child_process';
 
 // Test scenario: Create 2 worktrees with predefined branch names
 const testBranches = ['feature-auth', 'feature-ui'];
@@ -20,7 +20,7 @@ const sendNextResponse = () => {
     setTimeout(() => {
       const response = testResponses[responseIndex++];
       console.log(`\n📝 Sending: "${response}"`);
-      child.stdin.write(response + '\n');
+      child.stdin.write(`${response}\n`);
       sendNextResponse();
     }, 1000); // Wait 1 second between responses
   } else {
@@ -45,7 +45,7 @@ child.on('close', (code) => {
     
     // Check if worktrees were created
     setTimeout(() => {
-      import('fs').then(fs => {
+      import('node:fs').then(fs => {
         testBranches.forEach(branch => {
           const worktreePath = `../ccgwz-${branch}`;
           if (fs.existsSync(worktreePath)) {
