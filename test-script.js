@@ -10,7 +10,7 @@ console.log('🧪 Testing CCGWZ with automated input...');
 console.log(`Branches to create: ${testBranches.join(', ')}`);
 
 const child = spawn('node', ['dist/index.js', '--panes', '2'], {
-  stdio: ['pipe', 'inherit', 'inherit']
+  stdio: ['pipe', 'inherit', 'inherit'],
 });
 
 // Send responses automatically
@@ -39,13 +39,13 @@ child.on('spawn', () => {
 
 child.on('close', (code) => {
   console.log(`\n✅ CCGWZ process exited with code: ${code}`);
-  
+
   if (code === 0) {
     console.log('🎉 Test completed successfully!');
-    
+
     // Check if worktrees were created
     setTimeout(() => {
-      import('node:fs').then(fs => {
+      import('node:fs').then((fs) => {
         for (const branch of testBranches) {
           const worktreePath = `../ccgwz-${branch}`;
           if (fs.existsSync(worktreePath)) {

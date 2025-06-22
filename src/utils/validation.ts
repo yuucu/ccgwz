@@ -1,5 +1,5 @@
 import { execa } from 'execa';
-import type { Result, GitInfo, ZellijInfo } from '../types/index.js';
+import type { GitInfo, Result, ZellijInfo } from '../types/index.js';
 import { ERROR_MESSAGES, GIT_COMMANDS, ZELLIJ_COMMANDS } from './constants.js';
 
 export async function validateGitRepository(): Promise<Result<GitInfo>> {

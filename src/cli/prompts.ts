@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
 import type { BranchInfo } from '../types/index.js';
-import { sanitizeBranchName, generateUniqueBranchName } from '../utils/validation.js';
+import { generateUniqueBranchName, sanitizeBranchName } from '../utils/validation.js';
 
 export async function promptForBranches(
   paneCount: number,

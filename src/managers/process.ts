@@ -1,10 +1,10 @@
-import type { Result, CLIOptions, BranchInfo } from '../types/index.js';
+import { promptForBranches, showPlannedWorktrees } from '../cli/prompts.js';
+import type { BranchInfo, CLIOptions, Result } from '../types/index.js';
 import {
   validateGitRepository,
-  validateZellijRunning,
   validatePaneCount,
+  validateZellijRunning,
 } from '../utils/validation.js';
-import { promptForBranches, showPlannedWorktrees } from '../cli/prompts.js';
 import { GitManager } from './git.js';
 import { ZellijManager } from './zellij.js';
 

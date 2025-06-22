@@ -36,7 +36,16 @@ export class ZellijManager {
       // Create additional panes with Claude
       for (let i = 1; i < paneCount; i++) {
         const direction = i % 2 === 1 ? 'right' : 'down';
-        await execa('zellij', ['action', 'new-pane', '-d', direction, '--cwd', worktrees[i]!.worktreePath, '--', 'claude']);
+        await execa('zellij', [
+          'action',
+          'new-pane',
+          '-d',
+          direction,
+          '--cwd',
+          worktrees[i]!.worktreePath,
+          '--',
+          'claude',
+        ]);
       }
 
       return { success: true, data: undefined };
@@ -48,7 +57,6 @@ export class ZellijManager {
       };
     }
   }
-
 
   private async launchClaudeInCurrentPane(worktree: WorktreeCreationResult): Promise<Result<void>> {
     try {
@@ -63,5 +71,4 @@ export class ZellijManager {
       };
     }
   }
-
 }

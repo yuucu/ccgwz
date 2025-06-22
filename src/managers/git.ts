@@ -1,6 +1,6 @@
-import { execa } from 'execa';
 import { existsSync } from 'node:fs';
-import type { Result, BranchInfo, WorktreeCreationResult } from '../types/index.js';
+import { execa } from 'execa';
+import type { BranchInfo, Result, WorktreeCreationResult } from '../types/index.js';
 import { ERROR_MESSAGES } from '../utils/constants.js';
 
 export class GitManager {
