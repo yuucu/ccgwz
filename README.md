@@ -17,9 +17,13 @@ Imagine working on a feature branch while simultaneously fixing a bug on another
 ```bash
 # Just run it!
 npx ccgwz
+# or
+bunx ccgwz
 
 # Or install globally
 npm install -g ccgwz
+# or
+bun install -g ccgwz
 ```
 
 **Requirements**: Git repo + [Zellij](https://zellij.dev/) + [Claude Code](https://claude.ai/code)
