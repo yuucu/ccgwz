@@ -10,11 +10,10 @@
 
 ### Zellij Not Running
 
-**Error**: `Error: Zellij is not running. Please start zellij first or use --new-session.`
+**Error**: `Error: Zellij is not running. Please start zellij first.`
 
-**Solutions**:
+**Solution**:
 - Start zellij first: `zellij`
-- Use the `--new-session` flag: `ccgwz --new-session`
 
 ### Branch Name Conflicts
 

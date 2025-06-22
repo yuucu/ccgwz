@@ -4,7 +4,7 @@ import {
   validateZellijRunning,
   validatePaneCount,
 } from '../utils/validation.js';
-import { promptForBranches, confirmCreation } from '../cli/prompts.js';
+import { promptForBranches, showPlannedWorktrees } from '../cli/prompts.js';
 import { GitManager } from './git.js';
 import { ZellijManager } from './zellij.js';
 
@@ -29,11 +29,7 @@ export class ProcessOrchestrator {
         };
       }
 
-      const confirmed = await confirmCreation(branches);
-      if (!confirmed) {
-        console.log('Operation cancelled by user');
-        return { success: true, data: undefined };
-      }
+      showPlannedWorktrees(branches);
 
       const worktreeResult = await this.gitManager.createAllWorktrees(branches);
       if (!worktreeResult.success) {

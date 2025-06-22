@@ -10,7 +10,7 @@ export function createCLIParser(): Command {
     .version('0.1.0');
 
   program
-    .option('-p, --panes <number>', 'Number of panes to create', parseIntOption, 2)
+    .option('-p, --panes <number>', 'Number of panes to create', parseIntOption, 1)
     .option('-h, --help', 'Display help information');
 
   return program;
