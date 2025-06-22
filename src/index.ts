@@ -47,9 +47,8 @@ EXAMPLES:
   }
 }
 
-if (import.meta.url.endsWith(process.argv[1]!)) {
-  main().catch((error) => {
-    console.error('Fatal error:', error);
-    process.exit(1);
-  });
-}
+// Always run main function when this module is executed
+main().catch((error) => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});

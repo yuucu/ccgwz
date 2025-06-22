@@ -17,7 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": ["claude-code", "git-worktree", "zellij", "cli", "development"],
-  "author": "",
+  "author": "yuucu",
   "license": "MIT",
   "dependencies": {
     "commander": "^11.1.0",
