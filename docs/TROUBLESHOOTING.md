@@ -46,6 +46,8 @@
 # Follow Claude Code installation instructions
 npm install -g claude-code
 # or
+bun install -g claude-code
+# or
 curl -sSL https://claude.ai/install.sh | bash
 ```
 
