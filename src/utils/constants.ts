@@ -3,7 +3,6 @@ import type { Config } from '../types/index.js';
 export const DEFAULT_CONFIG: Config = {
   default: {
     panes: 2,
-    newSession: false,
     layout: 'vertical',
   },
   git: {
@@ -30,6 +29,7 @@ export const CONFIG_FILES = [
 
 export const ZELLIJ_COMMANDS = {
   LIST_SESSIONS: 'zellij list-sessions',
+  NEW_TAB: (name: string) => `zellij action new-tab --name "${name}"`,
   NEW_PANE_RIGHT: 'zellij action new-pane -d right',
   NEW_PANE_DOWN: 'zellij action new-pane -d down',
   MOVE_FOCUS_UP: 'zellij action move-focus up',

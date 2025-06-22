@@ -43,7 +43,7 @@ npx ccgwz --help
 
 ### Options
 
-- `--panes <number>`: Number of panes to create (default: 2)
+- `--panes <number>`: Number of panes to create (default: 1)
 - `--new-session`: Create new zellij session instead of using existing
 - `--help`: Show help information
 

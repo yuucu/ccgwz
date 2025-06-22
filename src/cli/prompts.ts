@@ -45,20 +45,10 @@ export async function promptForBranches(
   return branches;
 }
 
-export async function confirmCreation(branches: BranchInfo[]): Promise<boolean> {
+export function showPlannedWorktrees(branches: BranchInfo[]): void {
   console.log('\nPlanned worktrees:');
   branches.forEach((branch, index) => {
     console.log(`  ${index + 1}. ${branch.sanitizedName} -> ${branch.worktreePath}`);
   });
-
-  const { confirmed } = await inquirer.prompt([
-    {
-      type: 'confirm',
-      name: 'confirmed',
-      message: 'Create these worktrees and start Claude Code?',
-      default: true,
-    },
-  ]);
-
-  return confirmed;
+  console.log(''); // 空行を追加
 }

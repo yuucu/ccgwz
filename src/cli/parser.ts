@@ -10,9 +10,7 @@ export function createCLIParser(): Command {
     .version('0.1.0');
 
   program
-    .option('-p, --panes <number>', 'Number of panes to create', parseIntOption, 2)
-    .option('-n, --new-session', 'Create new zellij session', false)
-    .option('-s, --session-name <name>', 'Name for new session (default: ccgwz)')
+    .option('-p, --panes <number>', 'Number of panes to create', parseIntOption, 1)
     .option('-h, --help', 'Display help information');
 
   return program;
@@ -26,8 +24,6 @@ export function parseCLIOptions(args: string[]): CLIOptions {
 
   return {
     panes: options.panes,
-    newSession: options.newSession,
-    sessionName: options.sessionName,
     help: options.help,
     version: options.version,
   };

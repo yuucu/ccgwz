@@ -16,14 +16,11 @@ USAGE:
 
 OPTIONS:
   -p, --panes <number>     Number of panes to create (default: 2)
-  -n, --new-session        Create new zellij session  
-  -s, --session-name <name> Name for new session (default: ccgwz)
   -h, --help               Display this help message
 
 EXAMPLES:
-  ccgwz                    Create 2 panes in existing session
-  ccgwz --panes 3          Create 3 panes
-  ccgwz --new-session      Create new session
+  ccgwz                    Create 2 panes in new tab with project name
+  ccgwz --panes 3          Create 3 panes in new tab
       `);
       return;
     }

@@ -1,6 +1,6 @@
 {
   "name": "ccgwz",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Claude Code Git Worktree Zellij - CLI tool for parallel development with git worktrees and Claude Code in zellij panes",
   "main": "dist/index.js",
   "bin": {
@@ -14,7 +14,9 @@
     "check": "biome check .",
     "format": "biome format --write .",
     "lint": "biome lint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish"
   },
   "keywords": ["claude-code", "git-worktree", "zellij", "cli", "development"],
   "author": "yuucu",

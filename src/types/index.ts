@@ -1,7 +1,5 @@
 export interface CLIOptions {
   panes: number;
-  newSession: boolean;
-  sessionName?: string;
   help?: boolean;
   version?: boolean;
 }
@@ -15,7 +13,6 @@ export interface BranchInfo {
 export interface Config {
   default: {
     panes: number;
-    newSession: boolean;
     layout: 'vertical' | 'horizontal' | 'grid';
   };
   git: {
