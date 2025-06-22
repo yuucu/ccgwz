@@ -27,22 +27,16 @@ export class ZellijManager {
     worktrees: WorktreeCreationResult[]
   ): Promise<Result<void>> {
     try {
-      // Create additional panes
-      for (let i = 1; i < paneCount; i++) {
-        const direction = i % 2 === 1 ? 'right' : 'down';
-        await execa('zellij', ['action', 'new-pane', '-d', direction]);
+      // Launch Claude in current pane first
+      const firstResult = await this.launchClaudeInCurrentPane(worktrees[0]!);
+      if (!firstResult.success) {
+        return firstResult;
       }
 
-      // Launch Claude in each pane
-      for (let i = 0; i < Math.min(paneCount, worktrees.length); i++) {
-        if (i > 0) {
-          const direction = i % 2 === 1 ? 'right' : 'down';
-          await execa('zellij', ['action', 'move-focus', direction]);
-        }
-        const result = await this.launchClaudeInCurrentPane(worktrees[i]!);
-        if (!result.success) {
-          return result;
-        }
+      // Create additional panes with Claude
+      for (let i = 1; i < paneCount; i++) {
+        const direction = i % 2 === 1 ? 'right' : 'down';
+        await execa('zellij', ['action', 'new-pane', '-d', direction, '--cwd', worktrees[i]!.worktreePath, '--', 'claude']);
       }
 
       return { success: true, data: undefined };
