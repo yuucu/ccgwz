@@ -35,6 +35,22 @@ ccgwz                    # Interactive: create 1 pane
 ccgwz --panes 2          # Create 2 panes
 ```
 
+### 💡 Pro Tip: Create an Alias
+
+Add this to your shell profile (`.bashrc`, `.zshrc`, etc.) for quick access:
+
+```bash
+alias zz="bunx ccgwz"
+# or if you prefer npm
+alias zz="npx ccgwz"
+```
+
+Then simply run:
+```bash
+zz              # Launch CCGWZ instantly!
+zz --panes 3    # Create 3 panes quickly
+```
+
 ## 🏗️ What happens?
 
 1. **📍 Validates** your environment (git repo, zellij running)
@@ -49,6 +65,10 @@ ccgwz --panes 2          # Create 2 panes
 - **[Architecture & Design](docs/DESIGN.md)** - Technical architecture
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
 - **[Project Status](docs/TODO.md)** - Development roadmap
+
+## 📦 Repository
+
+- **[NPM Package](https://www.npmjs.com/package/ccgwz)** - Published package on NPM
 
 ## 🤝 Contributing
 
