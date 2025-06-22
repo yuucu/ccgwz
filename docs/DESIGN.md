@@ -32,7 +32,7 @@ CCGWZ (Claude Code Git Worktree Zellij) is a CLI tool that enables parallel deve
 npx ccgwz
 
 # Specify number of panes
-npx ccgwz --panes 3
+npx ccgwz --panes 2
 
 # Create new zellij session
 npx ccgwz --new-session
@@ -43,7 +43,7 @@ npx ccgwz --help
 
 ### Options
 
-- `--panes <number>`: Number of panes to create (default: 2)
+- `--panes <number>`: Number of panes to create (default: 1)
 - `--new-session`: Create new zellij session instead of using existing
 - `--help`: Show help information
 
@@ -118,7 +118,15 @@ ccgwz/
 
 ## Layout Management
 
-### 2 Panes (Default)
+### 1 Pane (Default)
+```
+┌─────────────────────────────┐
+│           Pane 1            │
+│          Branch A           │
+└─────────────────────────────┘
+```
+
+### 2 Panes
 ```
 ┌─────────────┬─────────────┐
 │    Pane 1   │    Pane 2   │
@@ -144,7 +152,7 @@ ccgwz/
 ```yaml
 # Default ccgwz configuration
 default:
-  panes: 2
+  panes: 1
   newSession: false
   layout: "vertical"  # vertical, horizontal, grid
   
